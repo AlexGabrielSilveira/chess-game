@@ -1,16 +1,6 @@
 const board = document.getElementById('board');
 let id = 0;
 
-function Identifiers() {
-    let numbersIndex = [1,9,17,25,33,41,49,57]
-    let lettersIndex = [57,58,59,60,61,62,63,64]
-    let letters = ['a','b','c','d','e','f','g','h']
-    
-    for(let i = 0; i < numbersIndex.length; i++) {
-        document.getElementById(numbersIndex[i]).innerHTML += `<span class="fixed w-24 h-24 flex justify-start items-start p-1 z-50">${i+1}</span>`
-        document.getElementById(lettersIndex[i]).innerHTML += `<span class="fixed w-24 h-24 flex justify-end items-end p-1 z-50">${letters[i]}</span>`
-    }
-}
 function Board() {
     for(let row = 0; row < 8; row++) {
         for(let column = 0; column < 8; column++) {
@@ -23,7 +13,6 @@ function Board() {
             board.appendChild(square)
         }
     }    
-    Identifiers();
 }
 function StartPosition() {
     let whitePosition = {
@@ -45,8 +34,8 @@ function StartPosition() {
 
     function Pawns() {
         for(let i = 0; i < whitePosition.pawn.length; i++) {
-            document.getElementById(whitePosition.pawn[i]).innerHTML += `<img src="../Images/chess/white/white_pawn.png" data-piece="pawn" data-color="white"></img>`;
-            document.getElementById(blackPosition.pawn[i]).innerHTML += `<img src="../Images/chess/black/black_pawn.png" data-piece="pawn" data-color="black"></img>`;
+            document.getElementById(whitePosition.pawn[i]).innerHTML += `<img src="../Images/chess/white/white_pawn.png" data-piece="pawn" data-color="white" class="first-move"></img>`;
+            document.getElementById(blackPosition.pawn[i]).innerHTML += `<img src="../Images/chess/black/black_pawn.png" data-piece="pawn" data-color="black" class="first-move"></img>`;
         }
     }
     function QueensAndKings() {
